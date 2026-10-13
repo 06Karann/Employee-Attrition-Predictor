@@ -23,6 +23,11 @@ The model is trained on key workplace and demographic features to provide accura
 
 ---
 
+### 🔗 Live Demo
+Check out the live application here: [Employee Attrition Predictor Live](https://employee-attrition-predictor-pomw.onrender.com)
+
+---
+
 ## 📂 Project Structure
 ```text
 Employee-Attrition-Predictor/
