@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Attrition Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7f6;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 450px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #333;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Employee Attrition Predictor</h2>
+        <form action="/predict" method="POST">
+            <label>Age:</label>
+            <input type="number" name="Age" required>
+
+            <label>Monthly Income:</label>
+            <input type="number" name="MonthlyIncome" required>
+
+            <label>Distance From Home (Km):</label>
+            <input type="number" name="DistanceFromHome" required>
+
+            <label>Overtime:</label>
+            <select name="Overtime" required>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+
+            <label>Marital Status:</label>
+            <select name="MaritalStatus" required>
+                <option value="Single">Single</option>
+                <option value="Married">Married</option>
+                <option value="Divorced">Divorced</option>
+            </select>
+
+            <button type="submit">Predict Risk</button>
+        </form>
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
